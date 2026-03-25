@@ -1,0 +1,5 @@
+./prog < input/test_1.txt > outprog/test_1.txt
+./prog < input/test_2.txt > outprog/test_2.txt
+./prog < input/test_3.txt > outprog/test_3.txt
+./prog < input/test_4.txt > outprog/test_4.txt
+diff output/ outprog/

@@ -1,0 +1,6 @@
+==23440== Memcheck, a memory error detector
+==23440== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==23440== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==23440== Command: Resultados/BrunoLourenco/matrizgenerica/prog Resultados/BrunoLourenco/matrizgenerica/Casos/1
+==23440== Parent PID: 23439
+==23440== 

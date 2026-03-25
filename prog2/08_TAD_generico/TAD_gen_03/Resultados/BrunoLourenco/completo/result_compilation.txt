@@ -1,0 +1,4 @@
+vector.c: In function ‘VectorPushBack’:
+vector.c:54:9: warning: ignoring return value of ‘realloc’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   54 |         realloc(v->data, sizeof(data_type)*v->capacidade);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

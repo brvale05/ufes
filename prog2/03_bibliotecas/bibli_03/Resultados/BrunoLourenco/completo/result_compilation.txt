@@ -1,0 +1,4 @@
+data.c: In function ‘comparaData’:
+data.c:149:1: warning: control reaches end of non-void function [-Wreturn-type]
+  149 | }
+      | ^

@@ -1,0 +1,4 @@
+jogo.c: In function ‘ComecaJogo’:
+jogo.c:19:13: warning: unused variable ‘jogada’ [-Wunused-variable]
+   19 |     tJogada jogada;
+      |             ^~~~~~

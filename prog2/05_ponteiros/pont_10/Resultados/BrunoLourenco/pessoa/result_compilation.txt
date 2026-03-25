@@ -1,0 +1,4 @@
+pessoa.c: In function ‘AssociaFamiliasGruposPessoas’:
+pessoa.c:79:51: warning: unused variable ‘aux’ [-Wunused-variable]
+   79 |     int mae, pai, filho, qtdAssociacoes, i, a, b, aux = 0;
+      |                                                   ^~~

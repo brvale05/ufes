@@ -1,0 +1,5 @@
+/usr/bin/ld: Resultados/BrunoLourenco/histograma/main.o: in function `main':
+main.c:(.text+0x51): undefined reference to `CalcularHistograma'
+/usr/bin/ld: main.c:(.text+0x61): undefined reference to `MostrarHistograma'
+/usr/bin/ld: main.c:(.text+0x6d): undefined reference to `DestruirHistograma'
+collect2: error: ld returned 1 exit status

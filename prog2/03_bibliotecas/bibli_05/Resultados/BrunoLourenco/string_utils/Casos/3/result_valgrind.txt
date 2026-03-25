@@ -1,0 +1,44 @@
+==21483== Memcheck, a memory error detector
+==21483== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==21483== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==21483== Command: Resultados/BrunoLourenco/string_utils/prog Resultados/BrunoLourenco/string_utils/Casos/3
+==21483== Parent PID: 21482
+==21483== 
+==21483== Conditional jump or move depends on uninitialised value(s)
+==21483==    at 0x484F229: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21483==    by 0x48C9D97: __printf_buffer (vfprintf-process-arg.c:435)
+==21483==    by 0x48CA72A: __vfprintf_internal (vfprintf-internal.c:1544)
+==21483==    by 0x48BF1A2: printf (printf.c:33)
+==21483==    by 0x109416: main (in /home/brvale/prog2/03_bibliotecas/bibli_05/Resultados/BrunoLourenco/string_utils/prog)
+==21483== 
+==21483== Syscall param write(buf) points to uninitialised byte(s)
+==21483==    at 0x497B574: write (write.c:26)
+==21483==    by 0x48F2964: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1181)
+==21483==    by 0x48F1560: new_do_write (fileops.c:449)
+==21483==    by 0x48F1560: _IO_do_write@@GLIBC_2.2.5 (fileops.c:426)
+==21483==    by 0x48F51D5: _IO_flush_all (genops.c:705)
+==21483==    by 0x48F57FC: _IO_cleanup (genops.c:843)
+==21483==    by 0x48A6B63: __run_exit_handlers (exit.c:129)
+==21483==    by 0x48A6BAD: exit (exit.c:138)
+==21483==    by 0x48891D0: (below main) (libc_start_call_main.h:74)
+==21483==  Address 0x4a75255 is 469 bytes inside a block of size 4,096 alloc'd
+==21483==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21483==    by 0x48E41A4: _IO_file_doallocate (filedoalloc.c:101)
+==21483==    by 0x48F4513: _IO_doallocbuf (genops.c:347)
+==21483==    by 0x48F1F7F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+==21483==    by 0x48F2A9E: _IO_new_file_xsputn (fileops.c:1244)
+==21483==    by 0x48F2A9E: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+==21483==    by 0x48E6C4C: puts (ioputs.c:40)
+==21483==    by 0x1091F2: string_menu (in /home/brvale/prog2/03_bibliotecas/bibli_05/Resultados/BrunoLourenco/string_utils/prog)
+==21483==    by 0x1092E9: main (in /home/brvale/prog2/03_bibliotecas/bibli_05/Resultados/BrunoLourenco/string_utils/prog)
+==21483== 
+==21483== 
+==21483== HEAP SUMMARY:
+==21483==     in use at exit: 0 bytes in 0 blocks
+==21483==   total heap usage: 2 allocs, 2 frees, 8,192 bytes allocated
+==21483== 
+==21483== All heap blocks were freed -- no leaks are possible
+==21483== 
+==21483== Use --track-origins=yes to see where uninitialised values come from
+==21483== For lists of detected and suppressed errors, rerun with: -s
+==21483== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

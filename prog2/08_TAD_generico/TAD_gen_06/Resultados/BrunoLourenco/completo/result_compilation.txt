@@ -1,0 +1,28 @@
+matrizgenerica.c: In function ‘CriaMatrizGenerica’:
+matrizgenerica.c:33:40: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   33 |     matriz->mtx = malloc(linhas*sizeof((void*)numByteElem));
+      |                                        ^
+matrizgenerica.c: In function ‘ObtemNumeroLinhasMatrizGenerica’:
+matrizgenerica.c:92:1: warning: control reaches end of non-void function [-Wreturn-type]
+   92 | }
+      | ^
+matrizgenerica.c: In function ‘ObtemNumeroColunasMatrizGenerica’:
+matrizgenerica.c:104:1: warning: control reaches end of non-void function [-Wreturn-type]
+  104 | }
+      | ^
+matrizgenerica.c: In function ‘ObtemElementoMatrizGenerica’:
+matrizgenerica.c:118:1: warning: control reaches end of non-void function [-Wreturn-type]
+  118 | }
+      | ^
+matrizgenerica.c: In function ‘MatrizTransposta’:
+matrizgenerica.c:157:1: warning: control reaches end of non-void function [-Wreturn-type]
+  157 | }
+      | ^
+matrizgenerica.c: In function ‘MultiplicaMatrizes’:
+matrizgenerica.c:173:1: warning: control reaches end of non-void function [-Wreturn-type]
+  173 | }
+      | ^
+matrizgenerica.c: In function ‘ConverteTipoMatriz’:
+matrizgenerica.c:188:1: warning: control reaches end of non-void function [-Wreturn-type]
+  188 | }
+      | ^

@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "esfera_utils.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "utils.h": "c",
+        "pessoa.h": "c",
+        "string.h": "c"
+    }
+}
