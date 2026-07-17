@@ -1,2 +1,3 @@
 # ufes
-Projetos e materiais de aulas.
+Projetos e atividades da faculdade.
+
