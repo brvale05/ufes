@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 int *cria_lista(int num);
 int le_numero();
@@ -13,20 +14,22 @@ int main(int argc, char **argv)
     int num = le_numero();
     int *lista = cria_lista(num);
 
-    for (int i = 2; i < num; i++)
+    double raiz = sqrt(num);
+
+    for (int i = 2; i < raiz; i++)
     {
         if (lista[i] == -1)
         {
             continue;
         }
 
-        for (int j = i * 2; j < num; j = j + i)
+        for (int j = i * i; j < num; j = j + i)
         {
             lista[j] = -1;
         }
     }
 
-    imprime_lista(lista, num);
+    // imprime_lista(lista, num);
 
     free(lista);
 
