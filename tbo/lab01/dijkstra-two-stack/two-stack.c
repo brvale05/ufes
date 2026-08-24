@@ -2,30 +2,34 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 void execute_algorithm(Stack *operators, Stack *operands, char *expression)
 {
-    for (int i = 0; expression[i] != '\0'; i++)
-    {
-        char car = expression[i];
+    char *ptr = expression;
 
-        if (is_operand(car))
+    while (*ptr != '\0')
+    {
+        if (is_operand(*ptr))
         {
+            char *endptr;
             double *num = malloc(sizeof(double));
 
-            *num = atof(&car);
+            *num = strtod(ptr, &endptr);
 
             push(operands, num);
+
+            ptr = endptr;
         }
-        else if (is_operator(car))
+        else if (is_operator(*ptr))
         {
             char *c = malloc(sizeof(char));
-
-            *c = car;
-
+            *c = *ptr;
             push(operators, c);
+
+            ptr++; 
         }
-        else if (car == ')')
+        else if (*ptr == ')')
         {
             double *num1 = (double *)pop(operands);
             double *num2 = (double *)pop(operands);
@@ -35,13 +39,17 @@ void execute_algorithm(Stack *operators, Stack *operands, char *expression)
             double *result = malloc(sizeof(double));
             *result = do_operation(num1, num2, op);
 
-            // printf("%lf %c %lf = %lf\n", *num1, *op, *num2, *result);
-
             free(num1);
             free(num2);
             free(op);
 
             push(operands, result);
+
+            ptr++; 
+        }
+        else
+        {
+            ptr++;
         }
     }
 }

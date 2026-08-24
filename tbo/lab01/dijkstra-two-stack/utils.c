@@ -2,6 +2,7 @@
 #include "stack.h"
 
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 int is_operand(char caracter)
@@ -42,23 +43,29 @@ int is_operator(char caracter)
 
 void print_double(void *data)
 {
-    double *num= (double*)data;
+    double *num = (double *)data;
 
-    printf("%lf ", *num);
+    printf("%.02lf ", *num);
 }
 
 void print_char(void *data)
 {
-    char *c = (char*)data;
-    
+    char *c = (char *)data;
+
     printf("%c ", *c);
 }
 
 char *read_expression()
 {
-    char *expression = malloc(sizeof(char) * MAX_SIZE);
+    char *line = malloc(sizeof(char) * MAX_SIZE);
 
-    scanf("%[^\n]", expression);
+    if (fgets(line, MAX_SIZE, stdin) == NULL)
+    {
+        free(line);
+        return NULL;
+    }
 
-    return expression;
+    line[strcspn(line, "\n")] = '\0';
+
+    return line;
 }

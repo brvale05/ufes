@@ -9,8 +9,13 @@ int main(int argc, char **argv)
 { 
     char *expression;
 
-    while ((expression = read_expression() != NULL))
+    while (1)
     {
+        if((expression = read_expression()) == NULL)
+        {
+            break;
+        }
+        
         Stack *operators = init(); // char vector
         Stack *operands = init();  // double vector
         
