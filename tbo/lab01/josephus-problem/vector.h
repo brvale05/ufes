@@ -2,6 +2,13 @@
 #define VECTOT_H
 
 typedef struct Vector Vector;
-typedef void* data_type;
+
+Vector *init(int N);
+
+void destroy(Vector *v);
+
+void print(Vector *v);
+
+int *pop(Vector *v, int i);
 
 #endif
