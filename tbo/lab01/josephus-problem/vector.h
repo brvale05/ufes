@@ -11,4 +11,6 @@ void print(Vector *v);
 
 int *pop(Vector *v, int i);
 
+int vector_size(Vector *v);
+
 #endif

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "vector.h"
+#include "josephus.h"
 
 int main(int argc, char **argv)
 {
@@ -11,6 +12,8 @@ int main(int argc, char **argv)
     scanf("%d %d", &N, &M);
 
     Vector *vector = init(N);
+
+    execute_algorithm(vector, M);
     
     destroy(vector);
 
