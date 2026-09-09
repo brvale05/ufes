@@ -22,12 +22,12 @@ int main(int argc, char **argv)
     root = insert(root, 300);
     root = insert(root, 270);
 
-    Stack *s = init();
+    Queue *q = create_queue();
 
-    preorder(root, s, print_visited_node);
+    level_order_traversal(q, root, print_visited_node);
 
     destroy_BST(root);
-    destroy_stack(s);
+    destroy_queue(q);
 
     return 0;
 }
