@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 
     while (scanf("%d %d", &p, &q) == 2)
     {
-        if(!connected(p, q, id))
+        if (!connected(p, q, id))
         {
             UF_union(p, q, id);
             printf("%d %d\n", p, q);
@@ -28,7 +28,6 @@ int main(int argc, char **argv)
     }
 
     free(id);
-    
 }
 
 int *UF_init()
@@ -41,7 +40,6 @@ int *UF_init()
     }
 
     return id;
-    
 }
 
 int UF_find(int i, int *id)
@@ -65,10 +63,8 @@ int UF_find(int i, int *id)
         j = id[j];
         id[aux] = root;
     }
-    
 
     return root;
-    
 }
 
 void UF_union(int p, int q, int *id)
@@ -81,7 +77,10 @@ void UF_union(int p, int q, int *id)
 
 int connected(int p, int q, int *id)
 {
-    if(id[p] == id[q])
+    int i = UF_find(p, id);
+    int j = UF_find(q, id);
+
+    if (i == j)
     {
         return 1;
     }
