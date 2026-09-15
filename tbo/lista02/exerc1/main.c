@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX_SIZE 30
+#define MAX_SIZE 100000000
+
+//Tempo de execução de 0.993 segundos com 100 milhões de valores.
 
 int compare_int(const void *a, const void *b)
 {
@@ -18,30 +20,18 @@ int main(int argc, char **argv)
 
     for (int i = 0; i < MAX_SIZE; i++)
     {
-        vet_1[i] = (rand() % 30) + 1;
-        vet_2[i] = (rand() % 30) + 1;
+        vet_1[i] = (rand() % MAX_SIZE) + 1;
+        vet_2[i] = (rand() % MAX_SIZE) + 1;
     }
 
     qsort(vet_1, MAX_SIZE, sizeof(int), compare_int);
     qsort(vet_2, MAX_SIZE, sizeof(int), compare_int);
 
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
-        printf("%d ", vet_1[i]);        
-    }
-
-    printf("\n\n");
-
-    for (int i = 0; i < MAX_SIZE; i++)
-    {        
-        printf("%d ", vet_2[i]);
-    }
-
-    printf("\n\n");
-
     int last_index = 0;
     int i = 0;
 
+    clock_t start, stop;
+    start = clock();
     while (i < MAX_SIZE)
     {
         if (vet_1[i] < vet_2[last_index])
@@ -50,7 +40,7 @@ int main(int argc, char **argv)
         }
         else if (vet_1[i] == vet_2[last_index])
         {
-            printf("%d ", vet_1[i]);
+            // printf("%d ", vet_1[i]);
             last_index++;
             i++;
         }
@@ -59,6 +49,11 @@ int main(int argc, char **argv)
             last_index++;
         }
     }
+    stop = clock();
+
+    double time_taken = ((double)stop - start) / CLOCKS_PER_SEC;
+
+    printf("Elapsed time: %.3f\n", time_taken);
 
     free(vet_1);
     free(vet_2);
